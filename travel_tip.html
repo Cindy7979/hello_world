@@ -1,0 +1,169 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Travel Tips::Travel in NZ</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="description" content="travel, New Zealand, NZ, trip, nature, south island, north island, travel tip, nz tip">
+
+		<link rel="stylesheet" href="./CSS/Styles.css" />
+		<link href="./CSS/font-awesome.min.css" rel="stylesheet"/>
+		<link href="./CSS/animate.css" rel="stylesheet"/>
+		
+		<script type="text/javascript" src="./JS/jquery.min.js"></script>
+		<script src="./JS/jquery.textillate.js" type="text/javascript"></script>
+    	<script src="./JS/jquery.lettering.js" type="text/javascript"></script>
+
+		<script type="text/javascript">
+			$(window).ready(function(){
+
+				// ------ BACKGROUND IMAGE EFFECCT ------ //
+				$('img.bgfade').hide();
+				var dg_H = $(window).height();
+				var dg_W = $(window).width();
+				$('#wrap').css({'height':dg_H,'width':dg_W});
+				$('#yt_movie').css({'height':dg_H*0.6, 'width':dg_W*0.6});
+				function anim() {
+				    $("#wrap img.bgfade").first().appendTo('#wrap').fadeOut(1500);
+				    $("#wrap img").first().fadeIn(1500);
+				    setTimeout(anim, 7000);
+				}
+				anim();
+
+				// ------ NAVIGATION ------ //
+				$("#menu_button1").click(function(){
+				    $("#sub_menu1").slideToggle();
+				    $("#sub_menu2").hide();
+				});
+		        $("#menu_button2").click(function(){
+				    $("#sub_menu2").slideToggle();
+				    $("#sub_menu1").hide();
+				});
+
+		        // ------ TEXT EFFECT ------ //
+		        $('.tlt').textillate({ in: {
+				    effect: 'bounceIn'
+				  },
+				  out: {
+				    effect: 'bounceOut',
+				    sync: true
+				  },
+				  loop: true
+				});
+
+				// ------ SEARCH ---------//
+				$("#search").keydown(function(e){
+			        $("#search").css("background", "pink");
+		        });
+
+		        $("#search").keyup(function(e){
+			        $("#search").css("background", "#ffffff");
+		        });
+
+				$( ":input" ).select(function() {
+				  $( "#info" ).text( "Something was selected" ).show().fadeOut( 3000 );
+				});
+			})
+
+			$(window).resize(function(){window.location.href=window.location.href})
+
+			$(function() {
+	            $( "#menu-1" ).menu();
+	         });
+		</script>
+	</head>
+
+	<body>
+		<div class = "logo_img">
+			<a href="./index.html"><img src = "./Images/logo_2.png"></a>
+		</div>
+
+		<!-- ***************** S : TEXT EFFECT ***************** -->
+		<div class = "tlt" align="center" style="padding-top:10px">
+			<ul class="texts" style="display: none">
+              <li class="">The world is a book and those who don't travel read only one page.  - St. Augustine</li>
+              <li class="">Too often travel, instead of broadening the mind, morely lengthens the conversation.  - Elizabeth Drew</li>
+              <li class="current">There are no foreign lands. It is the traveler only who is foreign.  - Robert Louis Stevenson</li>
+            </ul>
+
+		</div>
+
+		<!-- ***************** S : NAVIGATION ***************** -->
+		<nav>
+		    <ul class="content clearfix">
+		        <li><a href="./about_nz.html">ABOUT NZ</a></li>
+		        <li class="dropdown"><p id="menu_button1">NORTH ISLAND</p>
+		            <ul class="sub-menu" id="sub_menu1">
+		                <li><a href="./north_auckland.html">AUCKLAND</a></li>
+		                <li><a href="./north_wellington.html">WELLINGTON</a></li>
+		            </ul>
+		        </li>
+		        <li class="dropdown"><p id="menu_button2">SOUTH ISLAND</p>
+		        	<ul class="sub-menu" id="sub_menu2">
+		                <li><a href="./south_christchurch.html">CHRISTCHURCH</a></li>
+		                <li><a href="./south_queenstown.html">QUEENSTOWN</a></li>
+		            </ul>
+		        </li>
+		        <li><a href="./travel_tip.html">TRAVEL TIPS</a></li>
+		    </ul>
+		</nav>
+		<!-- ***************** E : NAVIGATION ***************** -->
+
+
+		<!-- ***************** YOUTUBE MOVIE ***************** -->
+		<div class = "container">
+			<h1> Useful booking websites</h1>
+			<h3>* Airplane</h3>
+			<p>
+				- Kayak :: <a href="https://www.kayak.com/‎">https://www.kayak.com/‎</a> <br />
+				- Sky scanner :: <a href="www.skyscanner.co.nz/‎">www.skyscanner.co.nz/‎</a> <br />
+				- Cheap flights :: <a href="www.cheapflights.co.nz/‎">www.cheapflights.co.nz/‎</a> <br />
+			</p>
+
+			<h3>* Accommodations</h3>
+			<p>
+				- YHA :: <a href="www.airbnb.co.kr/">www.airbnb.co.kr/</a> <br />
+				- Air B&B :: <a href="www.airbnb.co.kr/">www.airbnb.co.kr/</a> <br />
+				- Agoda :: <a href="https://www.agoda.com/">https://www.agoda.com/</a> <br />
+				- Hotelscan :: <a href="https://hotelscan.com/en/auckland">https://hotelscan.com/en/auckland</a>
+
+			</p>
+
+			<h1> Attention </h1>
+
+			<h3> 7 things you should know before you visit New Zealand</h3>
+			<iframe  id="yt_movie" src="https://www.youtube.com/embed/kD-Ml7mMXBg?loop=1&autoplay=1&playlist=kD-Ml7mMXBg" frameborder="0" allowfullscreen></iframe>
+		</div>
+
+		<!-- ***************** S : FOOTER ***************** -->
+		<div class="box">
+		  <div class="container-1">
+		  	<form action="https://www.google.co.nz/#q=" method="get" target="_blank">
+		      <span class="icon" style="top:0"><i class="fa fa-search"></i></span>
+		      <input type="search" id="search" placeholder="Do you need more information?"/>
+		      <div style="text-align:center;padding-left:30px;color:#ffffff;clear:both" id="info"> </div>
+		  </form>	
+		  </div>
+		</div>
+
+		<footer>
+		    <div>
+		    	<span>
+		            &copy; 2016, JINSUK SHIN<br>
+		        </span>
+		    </div>
+		</footer>
+		<!-- ***************** E : FOOTER ***************** -->
+
+		<!-- ***************** S : BACKGROUND IMAGE ***************** -->
+		<div id="wrap">
+			<img class="bgfade" src="./Images/bg_11.jpg" alt="Sunset over Queenstown" />
+			<img class="bgfade" src="./Images/bg_22.jpg" alt="Lake Wakatipu" />
+			<img class="bgfade" src="./Images/bg_33.jpg" alt="Lake Hayes" />
+			<img class="bgfade" src="./Images/bg_44.jpg" alt="Mt Cook, Lake Pukaki" />
+			<img class="bgfade" src="./Images/bg_55.jpg" alt="Queenstown New Zealand" />
+		</div>
+		<!-- ***************** E : BACKGROUND IMAGE ***************** -->
+		
+	</body>
+</html>
